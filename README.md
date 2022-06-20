@@ -36,7 +36,7 @@ Host someinternalhost
    * После этого входим на bastion через `ssh bastion`
    * ... и на someinternalhost через `ssh someinternalhost`
  * После втягивания `cloud-bastion.ovpn`
-   * `ssh -i ~/.ssh/appuser appuser@10.128.0.4`
+   * `ssh appuser@10.128.0.4`
 
 ### Дополнительное задание про сертификат
  * Пока не добрался
