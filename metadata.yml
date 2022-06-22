@@ -1,0 +1,23 @@
+#cloud-config
+users:
+  - name: appuser
+    groups: sudo
+    shell: /bin/bash
+    sudo:
+      - 'ALL=(ALL) NOPASSWD:ALL'
+    ssh-authorized-keys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCsD9QQQbgcMiYMRFaBMQJurEto\
+         UTUiAO/aRu2ZfKrpgZBSA6+oHyX0XhhhvYRzefZfYl4FfY4EgnoSlNR/4LWbHwrL\
+         E5A6qtCBbuiUj55LGcy8l4VQdsbb2pk6uCFfN/19aMK2K4vSMr+ijUsDvZvn+bxN\
+         /JY7bBzBL/dfaY4fW7QB4RvW/gZklO5cg/BLbeZsbtAZY16fWLKs9n817RNW/4jw\
+         XJftfCBxetsnEwGcIutJI9P33PwZ7H08EIwE+DvEoxh1G08ki+Cj+4uGdhAaRlXN\
+         fCookbDw/1WE3qhQd8IHyszG3oMtAhzeNN3mjtktqV+bjUNO7to10lNhJFUhh9+9\
+         xnUT6fYsSJjavPfpUSTZ4LO/MR47Tx7WXdgXYK/alkDDNAAyFwppo2YJs6Qg+05H\
+         9+r5InG8cSsBYJP5RwE+/eu6JJib9QXLNf+EiMK5HR3lykPzQG69lS0m/leODuI+\
+         tN/XU1/Vz1Hgvxe4cmQ7H/ZZCSQChoJtuYLu1S8= appuser"
+# Скрипты, на самом деле, будут лежать не в репозитории
+#   но в репозиторий я их тоже скачал, пусть будут
+runcmd:
+  - curl -s https://gist.githubusercontent.com/kaineer/dc509dbad9282fa3bd5a00351fda73b0/raw/af592e85e7399bfa97ebe7155c9f02d8e355eb87/install_ruby.sh | bash
+  - curl -s https://gist.githubusercontent.com/kaineer/dc509dbad9282fa3bd5a00351fda73b0/raw/af592e85e7399bfa97ebe7155c9f02d8e355eb87/install_mongodb.sh | bash
+  - curl -s https://gist.githubusercontent.com/kaineer/dc509dbad9282fa3bd5a00351fda73b0/raw/af592e85e7399bfa97ebe7155c9f02d8e355eb87/deploy.sh | bash
