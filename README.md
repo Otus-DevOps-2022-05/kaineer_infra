@@ -34,8 +34,10 @@ yc iam \
    --service-account-id $ACCT_ID \
    --output ./key.json
 ```
- * Создал базовый шаблон [ubuntu16.json](./packer/ubuntu16.json)
-
+ * Создал базовый шаблон [ubuntu16.json](./packer/ubuntu16.json), создал на его основе VM, установил туда reddit, настроил, проверил
+ * Обнаружил, что запушил .envrc, удалил ветку на github и локально и добавил все заново
+ * Создал шаблон [immutable.json](./packer/immutable.json), создал на его основе VM, проверил, что работает
+ * Так и не смог сделать, чтобы вместо аккаунта ubuntu создавался сразу же аккаунт appuser
 
 ## cloud-testapp [6]
 
