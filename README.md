@@ -1,5 +1,46 @@
 # Infra
 
+## packer-base [7]
+
+### Что сделано
+
+ * Установил инструмент direnv
+ * Установил инструмент packer
+ * Создал сервисный аккаунт `otus-packer`
+```
+### Переменные берутся из файла .envrc
+yc \
+  iam \
+  service-account \
+  create \
+  --name $SVC_ACCT \
+  --folder-id $FOLDER_ID
+```
+ * Выдал права сервисному аккаунту
+```
+yc resource-manager \
+  folder \
+  add-access-binding \
+  --id $FOLDER_ID \
+  --role editor \
+  --service-account-id $ACCT_ID
+```
+ * Сохранили service account key
+```
+### Команды выполнялись *вне* репозитария
+###   поэтому ./key.json в репозитарий не попал
+yc iam \
+   key create \
+   --service-account-id $ACCT_ID \
+   --output ./key.json
+```
+ * Создал базовый шаблон [ubuntu16.json](./packer/ubuntu16.json), создал на его основе VM, установил туда reddit, настроил, проверил
+ * Обнаружил, что запушил .envrc, удалил ветку на github и локально и добавил все заново
+ * Создал шаблон [immutable.json](./packer/immutable.json), создал на его основе VM, проверил, что работает
+ * Так и не смог сделать, чтобы вместо аккаунта ubuntu создавался сразу же аккаунт appuser
+ * При сдаче понял, что файл с примерами переменных д.б. называться variables.json.example, а не variables.example.json
+ * А ещё обнаружил, что packer validate требует наличия файла с ключами. Добавил пустой файл с пустым объектом.
+
 ## cloud-testapp [6]
 
 ### Данные для доступа к тестовому приложению
