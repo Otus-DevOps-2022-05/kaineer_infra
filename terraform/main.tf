@@ -17,6 +17,10 @@ provider "yandex" {
 resource "yandex_compute_instance" "app" {
   name = "reddit-app"
 
+  metadata = {
+    user-data = "${file("./files/metadata.yml")}"
+  }
+
   resources {
     cores = 2
     memory = 1
@@ -38,5 +42,4 @@ resource "yandex_compute_instance" "app" {
   scheduling_policy {
     preemptible = true
   }
-
 }
