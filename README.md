@@ -3,6 +3,21 @@
 ## terraform-1 [8]
 
  * Установил terraform с [зеркала](https://hc-mirror.express42.net/terraform/) -> 1.1.9
+ * Подтянул провайдеров, добавив в main.tf описание
+```hcl
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+      version = "~> 0.35"
+    }
+  }
+  required_version = ">= 0.13"
+}
+```
+ * И сделав terraform init
+ * ... после этого этот кусок файла удалил, чтобы не ругался валидатор
+
  * Настроил файл с переменными для terraform
 ```
 # $PROJECT_ROOT/terraform-1/.envrc
