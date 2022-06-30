@@ -1,24 +1,23 @@
-variable {
-    name = "token"
-    type = "string"
+variable "token" {
+    type = string
 }
 
-variable {
-    name = "cloud"
-    type = "string"
+variable "cloud" {
+    type = string
 }
 
-variable {
-    name = "folder_id"
-    type = "string"
+variable "folder_id" {
+    type = string
 }
 
-variable {
-    name = "subnet_id"
-    type = "string"
+variable "subnet_id" {
+    type = string
 }
 
-variable {
-    name = "zone"
-    type = "string"
+variable "zone" {
+    type = string
+}
+
+variable "reddit_app_image" {
+    type = string
 }
