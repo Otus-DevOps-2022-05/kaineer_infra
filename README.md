@@ -1,5 +1,65 @@
 # Infra
 
+## terraform-1 [8]
+
+ * Установил terraform с [зеркала](https://hc-mirror.express42.net/terraform/) -> 1.1.9
+ * Настроил файл с переменными для terraform
+```
+# $PROJECT_ROOT/terraform-1/.envrc
+
+export TF_VAR_token=$(yc config list | grep token | sed 's/token: //')
+export TF_VAR_cloud=$(yc config list | grep cloud-id | sed 's/cloud-id: //')
+export TF_VAR_folder_id=$(yc config list | grep folder-id | sed 's/folder-id: //')
+export TF_VAR_zone=$(yc config list | grep compute-default-zone | sed 's/compute-default-zone: //')
+export TF_VAR_subnet_id="e8bgt14n27pnl847kaoo"
+```
+   * subnet_id взял на страничке подсети
+
+ * Собрал файл ~/.terraformrc со ссылкой на mirror
+```
+provider_installation {
+  network_mirror {
+    url = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
+```
+ * Собрал файл main.tf со ссылкой на yandex provider
+```
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
+}
+
+provider "yandex" {
+  token     = var.token
+  cloud_id  = var.cloud
+  folder_id = var.folder_id
+  zone      = var.zone
+}
+```
+
+ * Запустил `terraform init` -> плагин провайдера подтянулся.
+ * Выполнил настройку main.tf чтобы создавать VM
+   * Сделал создание VM по образу reddit-base
+   * Добавил provisioning с пользователем appuser
+   * Проверил, что VM создается и доступен
+ * Добавил описание балансера из задания со звездой
+   * Скопировал готовое и допилил напильником
+   * Сделал, чтобы провижнинг соединялся со своим хостом
+   * Проверил, чтобы puma запускалась на обоих VM
+   * Проверил, что балансер отдаёт результат даже если остановить puma на одном из VM
+ * Поковырялся в автопроверке
+   * Выяснил, что terraform в автопроверке ставится устаревший (версия 0.12.19)
+   * Решил забить на успешную проверку в данном случае
+
 ## packer-base [7]
 
 ### Что сделано
