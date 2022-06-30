@@ -1,12 +1,12 @@
-// terraform {
-//   required_providers {
-//     yandex = {
-//       source = "yandex-cloud/yandex"
-//       version = "~> 0.35"
-//     }
-//   }
-//   required_version = ">= 0.13"
-// }
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+      version = "~> 0.35"
+    }
+  }
+  required_version = ">= 0.13"
+}
 
 provider "yandex" {
   token     = var.token
@@ -61,6 +61,6 @@ resource "yandex_compute_instance" "app" {
     user  = "appuser"
     agent = false
 
-    private_key = file("~/.ssh/appuser")
+    private_key = file(var.private_key_file)
   }
 }

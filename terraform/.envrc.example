@@ -3,3 +3,4 @@ export TF_VAR_cloud=$(yc config list | grep cloud-id | sed 's/cloud-id: //')
 export TF_VAR_folder_id=$(yc config list | grep folder-id | sed 's/folder-id: //')
 export TF_VAR_subnet_id="subnet id should be here"
 export TF_VAR_zone=$(yc config list | grep compute-default-zone | sed 's/compute-default-zone: //')
+export TF_VAR_private_key_file="~/.ssh/look-mom-private-key-file"

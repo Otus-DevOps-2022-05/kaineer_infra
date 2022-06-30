@@ -18,6 +18,10 @@ variable "zone" {
   type = string
 }
 
+variable "private_key_file" {
+  type = string
+}
+
 variable "reddit_app_image" {
   type = string
 }
