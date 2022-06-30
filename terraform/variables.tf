@@ -1,23 +1,23 @@
 variable "token" {
-    type = string
+  type = string
 }
 
 variable "cloud" {
-    type = string
+  type = string
 }
 
 variable "folder_id" {
-    type = string
+  type = string
 }
 
 variable "subnet_id" {
-    type = string
+  type = string
 }
 
 variable "zone" {
-    type = string
+  type = string
 }
 
 variable "reddit_app_image" {
-    type = string
+  type = string
 }

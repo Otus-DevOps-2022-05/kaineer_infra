@@ -15,14 +15,16 @@ provider "yandex" {
 }
 
 resource "yandex_compute_instance" "app" {
-  name = "reddit-app"
+  name = "reddit-app-${count.index}"
+
+  count = 2
 
   metadata = {
-    user-data = "${file("./files/metadata.yml")}"
+    user-data = file("./files/metadata.yml")
   }
 
   resources {
-    cores = 2
+    cores  = 2
     memory = 1
 
     core_fraction = 5
@@ -36,10 +38,28 @@ resource "yandex_compute_instance" "app" {
 
   network_interface {
     subnet_id = var.subnet_id
-    nat = true
+    nat       = true
   }
 
   scheduling_policy {
     preemptible = true
+  }
+
+  provisioner "file" {
+    source      = "./files/reddit-puma.service"
+    destination = "/tmp/reddit-puma.service"
+  }
+
+  provisioner "remote-exec" {
+    script = "./scripts/deploy.sh"
+  }
+
+  connection {
+    type  = "ssh"
+    host  = self.network_interface.0.nat_ip_address
+    user  = "appuser"
+    agent = false
+
+    private_key = file("~/.ssh/appuser")
   }
 }
