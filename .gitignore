@@ -1,3 +1,13 @@
-.envrc
+# credentials
+.envrc*
+!*.example
+
+# packer credentials
 packer/variables.json
 
+# terraform credentials and variables
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform/
+.terraform.lock.hcl
