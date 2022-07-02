@@ -39,3 +39,15 @@ variable "reddit_app_image" {
   description = "Образ с приложением"
   default = ""
 }
+
+variable "app_disk_image" {
+  type = string
+  description = "Disk image for reddit app"
+  default = "reddit-app"
+}
+
+variable "db_disk_image" {
+  type = string
+  description = "Disk image for reddit db"
+  default = "reddit-db"
+}
