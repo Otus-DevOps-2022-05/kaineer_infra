@@ -12,7 +12,7 @@
       "use_ipv4_nat": true,
       "zone": "{{ user `zone` }}",
       "subnet_id": "{{ user `subnet_id` }}",
-      "preemptible": "{{ user `image_preemtible` }}"
+      "preemptible": "{{ user `image_preemptible` }}"
     }
   ],
   "provisioners": [
