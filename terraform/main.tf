@@ -24,13 +24,15 @@ resource "yandex_vpc_subnet" "app-subnet" {
   zone = var.zone
 
   // link to previously defined app-network
-  network_id = "${yandex_vpc_network.app-network.id}"
+  network_id = yandex_vpc_network.app-network.id
 
   v4_cidr_blocks = ["192.168.10.0/24"]
 }
 
 resource "yandex_compute_instance" "app" {
   name = "reddit-app-${count.index}"
+
+  allow_stopping_for_update = true
 
   count = 1
 
@@ -52,7 +54,7 @@ resource "yandex_compute_instance" "app" {
   }
 
   network_interface {
-    subnet_id = var.subnet_id
+    subnet_id = yandex_vpc_subnet.app-subnet.id
     nat       = true
   }
 
