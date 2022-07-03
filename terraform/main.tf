@@ -16,15 +16,15 @@ provider "yandex" {
 }
 
 module "app" {
-  source          = "./modules/app"
+  source          = "${var.modules_root}/app"
   app_disk_image  = var.app_disk_image
-  subnet_id       = var.subnet_id
+  subnet_id       = yandex_vpc_subnet.app-subnet.id
   metadata_file   = var.metadata_file
 }
 
 module "db" {
-  source          = "./modules/db"
+  source          = "${var.modules_root}/db"
   db_disk_image   = var.db_disk_image
-  subnet_id       = var.subnet_id
+  subnet_id       = yandex_vpc_subnet.app-subnet.id
   metadata_file   = var.metadata_file
 }
