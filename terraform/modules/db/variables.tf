@@ -18,3 +18,14 @@ variable metadata_file {
   type = string
   description = "Path to metadata file"
 }
+
+variable module_name {
+  type = string
+  description = "Attempt to set module name"
+}
+
+variable module_memory {
+  type = number
+  description = "Gigabytes per VM"
+  default = 1
+}

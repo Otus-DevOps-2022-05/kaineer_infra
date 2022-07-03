@@ -20,6 +20,7 @@ module "app" {
   app_disk_image = var.app_disk_image
   subnet_id      = yandex_vpc_subnet.app-subnet.id
   metadata_file  = var.metadata_file
+  module_name    = "reddit-app"
 }
 
 module "db" {
@@ -27,4 +28,5 @@ module "db" {
   db_disk_image = var.db_disk_image
   subnet_id     = yandex_vpc_subnet.app-subnet.id
   metadata_file = var.metadata_file
+  module_name    = "reddit-db"
 }
