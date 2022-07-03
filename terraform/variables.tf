@@ -34,12 +34,6 @@ variable "private_key_file" {
   default = ""
 }
 
-variable "reddit_app_image" {
-  type = string
-  description = "Образ с приложением"
-  default = ""
-}
-
 variable "app_disk_image" {
   type = string
   description = "Disk image for reddit app"
@@ -50,4 +44,10 @@ variable "db_disk_image" {
   type = string
   description = "Disk image for reddit db"
   default = "reddit-db"
+}
+
+variable "metadata_file" {
+  type = string
+  description = "File with metadata"
+  default = ""
 }
