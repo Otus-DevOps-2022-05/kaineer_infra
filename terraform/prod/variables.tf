@@ -1,53 +1,53 @@
 variable "token" {
-  type = string
-  description = "Токен для доступа к облаку"   
-  default = ""
+  type        = string
+  description = "Токен для доступа к облаку"
+  default     = ""
 }
 
 variable "cloud" {
-  type = string
+  type        = string
   description = "Идентификатор облака"
-  default = ""
+  default     = ""
 }
 
 variable "folder_id" {
-  type = string
+  type        = string
   description = "Каталог для размещения ресурсов"
-  default = ""
+  default     = ""
 }
 
 variable "subnet_id" {
-  type = string
+  type        = string
   description = "Идентификатор подсети"
-  default = ""
+  default     = ""
 }
 
 variable "zone" {
-  type = string
+  type        = string
   description = "Зона, в которой размещаются подсети"
-  default = ""
+  default     = ""
 }
 
 variable "private_key_file" {
-  type = string
+  type        = string
   description = "Путь к файлу с приватным ключом"
-  default = ""
+  default     = ""
 }
 
 variable "app_disk_image" {
-  type = string
+  type        = string
   description = "Disk image for reddit app"
-  default = "reddit-app"
+  default     = "reddit-app"
 }
 
 variable "db_disk_image" {
-  type = string
+  type        = string
   description = "Disk image for reddit db"
-  default = "reddit-db"
+  default     = "reddit-db"
 }
 
 variable "metadata_file" {
-  type = string
+  type        = string
   description = "File with metadata"
-  default = ""
+  default     = ""
 }
