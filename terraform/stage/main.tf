@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "yandex" {
-  token     = var.token
+  service_account_key_file = var.service_account_key_file
   cloud_id  = var.cloud
   folder_id = var.folder_id
   zone      = var.zone

@@ -51,3 +51,9 @@ variable "metadata_file" {
   description = "File with metadata"
   default     = ""
 }
+
+variable "service_account_key_file" {
+  type        = string
+  description = "Key file path"
+  default     = ""
+}
