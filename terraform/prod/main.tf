@@ -12,6 +12,8 @@ module "app" {
   metadata_file  = var.metadata_file
   module_name    = "reddit-app"
   module_memory  = 2
+  database_ip    = module.db.external_ip_address_db
+  private_key_file = var.private_key_file
 }
 
 module "db" {
@@ -20,4 +22,5 @@ module "db" {
   subnet_id     = yandex_vpc_subnet.app-subnet.id
   metadata_file = var.metadata_file
   module_name    = "reddit-db"
+  private_key_file = var.private_key_file
 }

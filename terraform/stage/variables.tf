@@ -31,7 +31,7 @@ variable "zone" {
 variable "private_key_file" {
   type        = string
   description = "Путь к файлу с приватным ключом"
-  default     = ""
+  default     = "~/.ssh/appuser"
 }
 
 variable "app_disk_image" {

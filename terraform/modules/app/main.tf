@@ -27,4 +27,22 @@ resource "yandex_compute_instance" "app" {
   metadata = {
     user-data = file(var.metadata_file)
   }
+
+	connection {
+    type = "ssh"
+    host = self.network_interface.0.nat_ip_address
+    user = "appuser"
+    agent = false
+
+    private_key = file(var.private_key_file)
+  }
+
+  provisioner "file" {
+		content = templatefile("../files/puma.service.tftpl", { database_ip = var.database_ip })
+    destination = "/tmp/puma.service"
+	}
+
+	provisioner "remote-exec" {
+		script = "../files/deploy.sh"
+  }
 }

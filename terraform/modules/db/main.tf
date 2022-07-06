@@ -26,4 +26,22 @@ resource "yandex_compute_instance" "db" {
   metadata = {
     user-data = file(var.metadata_file)
   }
+
+	connection {
+    type = "ssh"
+    host = self.network_interface.0.nat_ip_address
+    user = "appuser"
+    agent = false
+
+    private_key = file(var.private_key_file)
+  }
+
+  provisioner "file" {
+		content = file("../files/mongodb.conf")
+		destination = "/tmp/mongodb.conf"
+  }
+
+  provisioner "remote-exec" {
+    script = "../files/config_mongodb.sh"
+  }
 }

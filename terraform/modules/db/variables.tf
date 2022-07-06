@@ -24,6 +24,11 @@ variable module_name {
   description = "Attempt to set module name"
 }
 
+variable private_key_file {
+  type = string
+  description = "Private key path"
+}
+
 variable module_memory {
   type = number
   description = "Gigabytes per VM"

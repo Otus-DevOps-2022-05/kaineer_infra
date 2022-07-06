@@ -9,23 +9,35 @@ variable "app_disk_image" {
   default = "reddit-app"
 }
 
-variable subnet_id {
+variable "subnet_id" {
   type = string
   description = "Subnets for modules"
 }
 
-variable metadata_file {
+variable "metadata_file" {
   type = string
   description = "Path to metadata file"
 }
 
-variable module_name {
+variable "module_name" {
   type = string
   description = "Attempt to set module name"
 }
 
-variable module_memory {
+variable "module_memory" {
   type = number
   description = "Gigabytes per VM"
   default = 1
+}
+
+variable "private_key_file" {
+  type = string
+  description = "Private key path"
+  default = ""
+}
+
+variable "database_ip" {
+	type = string
+	description = "Database instance ip"
+	default = ""
 }
