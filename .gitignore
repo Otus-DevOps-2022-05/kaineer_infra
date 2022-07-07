@@ -12,3 +12,5 @@ packer/variables.json
 .terraform/
 .terraform.lock.hcl
 *.lock.info
+
+providers.tf
