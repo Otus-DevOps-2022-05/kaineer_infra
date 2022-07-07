@@ -27,9 +27,14 @@ resource "yandex_compute_instance" "db" {
     user-data = file(var.metadata_file)
   }
 
+}
+
+resource "null_resource" "deploy" {
+	count = var.deploy ? 1 : 0
+
 	connection {
     type = "ssh"
-    host = self.network_interface.0.nat_ip_address
+    host = yandex_compute_instance.db.network_interface.0.nat_ip_address
     user = "appuser"
     agent = false
 

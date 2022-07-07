@@ -34,3 +34,9 @@ variable module_memory {
   description = "Gigabytes per VM"
   default = 1
 }
+
+variable deploy {
+  type = bool
+  description = "Do deploy steps"
+  default = false
+}

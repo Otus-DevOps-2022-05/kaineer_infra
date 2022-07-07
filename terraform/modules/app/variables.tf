@@ -41,3 +41,9 @@ variable "database_ip" {
 	description = "Database instance ip"
 	default = ""
 }
+
+variable "deploy" {
+	type = bool
+  description = "Do application deploy"
+  default = false
+}

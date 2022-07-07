@@ -57,3 +57,9 @@ variable "service_account_key_file" {
   description = "Key file path"
   default     = ""
 }
+
+variable "deploy" {
+  type        = bool
+  description = "Run provisioning"
+  default     = false
+}

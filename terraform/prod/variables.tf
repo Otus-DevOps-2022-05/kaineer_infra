@@ -31,7 +31,7 @@ variable "zone" {
 variable "private_key_file" {
   type        = string
   description = "Путь к файлу с приватным ключом"
-  default     = ""
+  default     = "~/.ssh/appuser"
 }
 
 variable "app_disk_image" {
@@ -57,3 +57,10 @@ variable "service_account_key_file" {
   description = "Key file path"
   default     = ""
 }
+
+variable "deploy" {
+  type        = bool
+  description = "Run provisioning"
+  default     = false
+}
+
