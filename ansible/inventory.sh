@@ -1,7 +1,9 @@
 #!/bin/bash
 
-APPSERVER=$(cat ./servers.yml | grep app | cut -f2 -d" ")
-DBSERVER=$(cat ./servers.yml | grep db | cut -f2 -d" ")
+if [ -f "./servers.yml" ]; then
+	APPSERVER=$(cat ./servers.yml | grep app | cut -f2 -d" ")
+	DBSERVER=$(cat ./servers.yml | grep db | cut -f2 -d" ")
+fi
 
 output_list_json() {
 	echo '{"all": {"children": ["app", "db"]},'
