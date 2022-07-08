@@ -15,7 +15,7 @@
       "zone": "{{ user `zone` }}",
       "subnet_id": "{{ user `subnet_id` }}",
       "skip_create_image": false,
-      "preemptible": "{{ user `image_preemtible` }}"
+      "preemptible": "{{ user `image_preemptible` }}"
     }
   ],
   "provisioners": [
