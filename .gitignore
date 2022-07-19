@@ -13,4 +13,8 @@ packer/variables.json
 .terraform.lock.hcl
 *.lock.info
 
+# providers for terraform
 providers.tf
+
+# ansible tmp files
+*.retry
