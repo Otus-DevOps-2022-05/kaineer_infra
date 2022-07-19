@@ -1,0 +1,1 @@
+{"all": {"children": ["app", "db"]}, "db": {"hosts": ["dbserver"]}, "app": {"hosts": ["appserver"]}, "_meta": {"hosts": {"dbserver": {"ansible_host": "51.250.64.27"}, "appserver": {"ansible_host": "62.84.118.152"}}, "vars": {"db_inner_ip": "192.168.10.32"}}}

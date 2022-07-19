@@ -1,0 +1,16 @@
+- name: Configure hosts & deploy application
+  hosts: db
+  become: true
+  vars:
+    mongo_bind_ip: 0.0.0.0
+  tasks: 
+    - name: Change mongo config file
+      template:
+        src: templates/mongod.conf.j2
+        # Different path for mongodb package
+        dest: /etc/mongodb.conf
+        mode: 0644
+      notify: "Restart mongodb"
+  handlers:
+    - name: "Restart mongodb"
+      service: name=mongodb state=restarted
