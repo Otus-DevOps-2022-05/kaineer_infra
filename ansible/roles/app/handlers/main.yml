@@ -1,0 +1,4 @@
+# roles/app/handlers/main.yml
+---
+- name: reload puma
+  systemd: name=puma state=restarted

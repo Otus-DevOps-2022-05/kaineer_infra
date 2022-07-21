@@ -1,0 +1,6 @@
+- name: Prepare app host
+  hosts: app
+  become: true
+  roles:
+    - app
+    - jdauphant.nginx
