@@ -18,3 +18,7 @@ providers.tf
 
 # ansible tmp files
 *.retry
+
+# community roles
+jdauphant.nginx
+
