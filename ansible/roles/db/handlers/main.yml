@@ -1,0 +1,4 @@
+# db/handlers/main.yml
+---
+- name: restart mongod
+  service: name=mongodb state=restarted
