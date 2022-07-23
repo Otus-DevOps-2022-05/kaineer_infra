@@ -1,5 +1,8 @@
 # Infra
 
+![Самостоятельная проверка](https://github.com/Otus-DevOps-2022-05/kaineer_infr/actions/workflows/run-self-tests/badge.svg)
+
+
 ## ansible-3 [12]
 
  * Проверка pre-commit
