@@ -13,3 +13,6 @@
     # some text file for everyone to read
     mode: 0644
   notify: restart mongod
+
+- include: install_mongo.yml
+- include: config_mongo.yml
