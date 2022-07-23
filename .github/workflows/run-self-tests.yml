@@ -1,0 +1,19 @@
+name: Run tests for devops course
+on:
+  push:
+    branches-ignore: main
+  pull_request:
+    branches-ignore: main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+
+    - name: Run tests
+      run: https://gist.githubusercontent.com/kaineer/193012aeaa5427d2572b15c92423b5bb/raw/efc30702fba50a728f13c548290e9989cb753db4/run.sh
