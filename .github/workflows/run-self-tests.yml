@@ -16,4 +16,4 @@ jobs:
         ref: ${{ github.ref }}
 
     - name: Run tests
-      run: curl -s https://gist.githubusercontent.com/kaineer/193012aeaa5427d2572b15c92423b5bb/raw/c174de4d265b939fe9bc4c8203fcad2ec7ec7102/run.sh | bash
+      run: curl -s https://gist.githubusercontent.com/kaineer/193012aeaa5427d2572b15c92423b5bb/raw/6d06af1b6cc5e2c6fac997b810cc6a54667ec57f/run.sh | bash
