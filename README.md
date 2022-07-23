@@ -1,6 +1,6 @@
 # Infra
 
-![Самостоятельная проверка](https://github.com/Otus-DevOps-2022-05/kaineer_infr/actions/workflows/run-self-tests/badge.svg)
+![Самостоятельная проверка](https://github.com/Otus-DevOps-2022-05/kaineer_infra/actions/workflows/run-self-tests.yml/badge.svg)
 
 
 ## ansible-3 [12]
