@@ -3,4 +3,6 @@
   apt:
     name: [ "ruby-full", "ruby-bundler", "build-essential" ]
     state: present
+    update_cache: true
+    update_cache_retries: 5
   tags: ruby
