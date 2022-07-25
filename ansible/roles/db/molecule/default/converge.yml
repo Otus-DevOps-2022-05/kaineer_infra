@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: instance
+  become: true
+  vars:
+    mongo_bind_ip: 0.0.0.0
+  roles:
+    - role: db
+  # tasks:
+  #   - name: "Include db"
+  #     include_role:
+  #       name: "db"
