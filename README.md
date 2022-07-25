@@ -5,6 +5,7 @@
 ![Проверки от OTUS](https://github.com/Otus-DevOps-2022-05/kaineer_infra/actions/workflows/run-tests.yml/badge.svg)
 
 ![Самостоятельная проверка](https://github.com/Otus-DevOps-2022-05/kaineer_infra/actions/workflows/run-self-tests.yml/badge.svg)
+
 ![Проверка yaml-файлов в роли db](https://github.com/kaineer/ansible-role-db/actions/workflows/linting.yml/badge.svg)
 (Как запускать vagrant в CI ещё не знаю)
 
