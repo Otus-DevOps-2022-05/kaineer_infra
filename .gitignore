@@ -1,4 +1,4 @@
-# credentials
+#credentials
 .envrc*
 !*.example
 
@@ -21,6 +21,7 @@ providers.tf
 
 # community roles
 jdauphant.nginx
+roles/db
 
 # Vagrant + molecule
 .vagrant/
@@ -29,3 +30,4 @@ jdauphant.nginx
 .molecule
 .cache
 .pytest_cache
+.galaxy_install_info
