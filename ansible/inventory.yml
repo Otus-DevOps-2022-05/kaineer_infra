@@ -1,8 +1,0 @@
-all:
-  children:
-    db: 
-      hosts:
-        "51.250.64.27": null
-    app: 
-      hosts:
-        "62.84.118.152": null

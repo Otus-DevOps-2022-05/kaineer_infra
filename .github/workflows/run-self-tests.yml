@@ -1,0 +1,19 @@
+name: Run tests for packer/terraform/ansible playbooks
+on:
+  push:
+    branches-ignore: main
+  pull_request:
+    branches-ignore: main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+
+    - name: Run tests
+      run: curl -s https://gist.githubusercontent.com/kaineer/193012aeaa5427d2572b15c92423b5bb/raw/3449e488114d9de96e853ca20548f16d8fb769a0/run.sh | bash

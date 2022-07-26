@@ -1,0 +1,16 @@
+# roles/db/meta/main.yml
+
+galaxy_info:
+  author: Sergey Kluchkovsky
+  description: student
+  license: MIT
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Debian
+      versions:
+        - 9
+
+  galaxy_tags: []
+
+dependencies: []

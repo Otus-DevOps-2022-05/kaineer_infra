@@ -1,0 +1,6 @@
+# db/vars/main.yml
+---
+# manual says it should be 127.0.0.1?
+# eeeh.. no.
+mongo_bind_ip: 0.0.0.0
+mongo_port: 27017

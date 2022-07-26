@@ -1,5 +1,21 @@
 # Infra
 
+## Проверки
+
+![Проверки от OTUS](https://github.com/Otus-DevOps-2022-05/kaineer_infra/actions/workflows/run-tests.yml/badge.svg)
+
+![Самостоятельная проверка](https://github.com/Otus-DevOps-2022-05/kaineer_infra/actions/workflows/run-self-tests.yml/badge.svg)
+
+## ansible-3 [12]
+
+ * Вернул pre-commit. С ним прикольнее
+ * Разнес задачи по ролям
+ * Добавил community-роль jdauphan.nginx
+ * Добавил playbook для создания пользователей (user.yml)
+   * Использовал для шифровки паролей ansible-vault
+ * Настроил ещё один workflow для самопроверки terraform, packer и ansible ролей
+ * Добавил бэджи для нового workflow и workflow по otus-homeworks
+
 ## ansible-2 [11]
 
  * Попробовал способы установки окружения через
