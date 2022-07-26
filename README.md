@@ -2,9 +2,24 @@
 
 ## Проверки
 
+### kaineer_infra
 ![Проверки от OTUS](https://github.com/Otus-DevOps-2022-05/kaineer_infra/actions/workflows/run-tests.yml/badge.svg)
 
 ![Самостоятельная проверка](https://github.com/Otus-DevOps-2022-05/kaineer_infra/actions/workflows/run-self-tests.yml/badge.svg)
+
+### kaineer/ansible-role-db
+![Проверка yaml-файлов в роли db](https://github.com/kaineer/ansible-role-db/actions/workflows/linting.yml/badge.svg)
+(Как запускать vagrant в CI ещё не знаю)
+
+## ansible-4 [13]
+
+ * Поставил вагрант, virtualbox был поставлен гораздо раньше
+ * Настроил провижнинг и проверил, чтобы приложение работало
+ * Проверил, чтобы packer_{app,db}.yml отрабатывали с {app,db}.json с использованием ролей
+ * Установил molecule, установил molecule-vagrant, чтобы molecule работало не только через delegated
+ * Настроил и запустил целых три проверки
+ * Вынес роль db в [отдельный репозиторий](https://github.com/kaineer/ansible-role-db)
+ * Для отдельного репозитория настроил workflow (как сделать в нём запуск molecule не раскопал, поэтому сделал просто lint), сделал ему бэдж, положил его в README основного репозитория, добавил интеграцию со слаком.
 
 ## ansible-3 [12]
 
